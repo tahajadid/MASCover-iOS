@@ -1,0 +1,6 @@
+framework module Pods_MasCover_iOS_MasCover_iOSUITests {
+  umbrella header "Pods-MasCover-iOS-MasCover-iOSUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
