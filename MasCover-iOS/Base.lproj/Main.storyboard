@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZOK-V8-XLh">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,58 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MasCover_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="only_mas_cover" translatesAutoresizingMaskIntoConstraints="NO" id="FNG-Fq-BgL">
+                                <rect key="frame" x="87" y="252" width="240" height="219"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="600" verticalCompressionResistancePriority="600" image="phone_back" translatesAutoresizingMaskIntoConstraints="NO" id="IIQ-6A-ABq">
+                                <rect key="frame" x="-32" y="358" width="478" height="730"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FNG-Fq-BgL" secondAttribute="trailing" constant="87" id="GHA-OE-kZq"/>
+                            <constraint firstItem="FNG-Fq-BgL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="164" id="GRx-LK-DgM"/>
+                            <constraint firstItem="IIQ-6A-ABq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-32" id="GjK-8m-0D1"/>
+                            <constraint firstItem="IIQ-6A-ABq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="270" id="elo-J5-p0w"/>
+                            <constraint firstAttribute="trailing" secondItem="IIQ-6A-ABq" secondAttribute="trailing" constant="-32" id="iil-j4-HJ7"/>
+                            <constraint firstItem="FNG-Fq-BgL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="q55-yK-L6u"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="STb-VP-XUy"/>
+                    <connections>
+                        <outlet property="mascoverUI" destination="FNG-Fq-BgL" id="YRn-Rt-azM"/>
+                        <outlet property="phoneUi" destination="IIQ-6A-ABq" id="fXq-vi-3Z2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="815.94202898550736" y="339.50892857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5jF-cJ-a38">
+            <objects>
+                <navigationController id="ZOK-V8-XLh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9Ci-ev-jor">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="NJV-kG-cd9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rgv-13-0Cz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-178" y="340"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="only_mas_cover" width="494" height="219"/>
+        <image name="phone_back" width="600" height="730"/>
+    </resources>
 </document>
