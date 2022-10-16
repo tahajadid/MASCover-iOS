@@ -18,8 +18,6 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         
-        //self.mascoverUI.fadeIn()
-        //self.phoneUi.fadeIn()
 
         let oldCenterFirst = mascoverUI.center
         let newCenterFirst = CGPoint(x: oldCenterFirst.x, y: oldCenterFirst.y + 40)
@@ -27,7 +25,7 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 1, delay: 0, options: .curveLinear, animations: {
             self.mascoverUI.center = newCenterFirst
         }) { (success: Bool) in
-          print("Done moving image")
+          print("Done top image")
           }
         
         
@@ -37,8 +35,16 @@ class ViewController: UIViewController {
         UIView.animate(withDuration: 1, delay: 0, options: .curveLinear, animations: {
             self.phoneUi.center = newCenterSecond
         }) { (success: Bool) in
-          print("Done moving image")
+          print("Done bottom image")
           }
+       
+            
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.7) {
+            if let navigationController = self.navigationController{
+                navigationController.pushViewController(HomeViewController(), animated: true)
+            }
+        }
+        
         
     }
 
