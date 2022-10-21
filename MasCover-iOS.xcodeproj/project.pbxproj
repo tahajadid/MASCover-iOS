@@ -32,6 +32,8 @@
 		9CC951702902F36B00A13709 /* Categorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC9516F2902F36B00A13709 /* Categorie.swift */; };
 		9CC951732903062700A13709 /* CategorieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC951712903062700A13709 /* CategorieCell.swift */; };
 		9CC951742903062700A13709 /* CategorieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC951722903062700A13709 /* CategorieCell.xib */; };
+		9CC9517829035C6B00A13709 /* WallpapersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC9517629035C6B00A13709 /* WallpapersViewController.swift */; };
+		9CC9517929035C6B00A13709 /* WallpapersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC9517729035C6B00A13709 /* WallpapersViewController.xib */; };
 		A931BC3A2AC727A5B9734FE9 /* Pods_MasCover_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7509280C7B38B0604E6C7403 /* Pods_MasCover_iOSTests.framework */; };
 		F5639731508A1E2E0D6C8D48 /* Pods_MasCover_iOS_MasCover_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7777D1DDC9724AA9D955525 /* Pods_MasCover_iOS_MasCover_iOSUITests.framework */; };
 /* End PBXBuildFile section */
@@ -86,6 +88,8 @@
 		9CC9516F2902F36B00A13709 /* Categorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorie.swift; sourceTree = "<group>"; };
 		9CC951712903062700A13709 /* CategorieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorieCell.swift; sourceTree = "<group>"; };
 		9CC951722903062700A13709 /* CategorieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorieCell.xib; sourceTree = "<group>"; };
+		9CC9517629035C6B00A13709 /* WallpapersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersViewController.swift; sourceTree = "<group>"; };
+		9CC9517729035C6B00A13709 /* WallpapersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WallpapersViewController.xib; sourceTree = "<group>"; };
 		D25B75957EFF9952EEAAF0D6 /* Pods-MasCover-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasCover-iOS.debug.xcconfig"; path = "Target Support Files/Pods-MasCover-iOS/Pods-MasCover-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D7777D1DDC9724AA9D955525 /* Pods_MasCover_iOS_MasCover_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasCover_iOS_MasCover_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -146,6 +150,7 @@
 		9C223CB628F73B1F008F156A /* MasCover-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				9CC9516E2902F35F00A13709 /* model */,
 				9C696BD928FC80FE0082EC40 /* ui */,
 				9C696BD628FAFF3A0082EC40 /* extension */,
 				9C696BCF28FAB4180082EC40 /* animation */,
@@ -209,6 +214,7 @@
 		9C696BD928FC80FE0082EC40 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				9CC9517529035C4300A13709 /* wallpapers */,
 				9C696BDA28FC81050082EC40 /* home */,
 			);
 			path = ui;
@@ -217,7 +223,6 @@
 		9C696BDA28FC81050082EC40 /* home */ = {
 			isa = PBXGroup;
 			children = (
-				9CC9516E2902F35F00A13709 /* model */,
 				9CC951692902EC8100A13709 /* catagerie cell */,
 				9C696BDB28FC81650082EC40 /* HomeViewController.swift */,
 				9C696BDC28FC81650082EC40 /* HomeViewController.xib */,
@@ -240,6 +245,15 @@
 				9CC9516F2902F36B00A13709 /* Categorie.swift */,
 			);
 			path = model;
+			sourceTree = "<group>";
+		};
+		9CC9517529035C4300A13709 /* wallpapers */ = {
+			isa = PBXGroup;
+			children = (
+				9CC9517629035C6B00A13709 /* WallpapersViewController.swift */,
+				9CC9517729035C6B00A13709 /* WallpapersViewController.xib */,
+			);
+			path = wallpapers;
 			sourceTree = "<group>";
 		};
 		BD79D4E8DB3D26CF7C20A135 /* Frameworks */ = {
@@ -276,6 +290,7 @@
 				9C223CB028F73B1F008F156A /* Sources */,
 				9C223CB128F73B1F008F156A /* Frameworks */,
 				9C223CB228F73B1F008F156A /* Resources */,
+				302B0761ACC0A368005585AE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -318,6 +333,7 @@
 				9C223CD328F73B23008F156A /* Sources */,
 				9C223CD428F73B23008F156A /* Frameworks */,
 				9C223CD528F73B23008F156A /* Resources */,
+				C887F0A0ADFF94DE74F6723D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -382,6 +398,7 @@
 			files = (
 				9C223CC728F73B23008F156A /* LaunchScreen.storyboard in Resources */,
 				9CC951742903062700A13709 /* CategorieCell.xib in Resources */,
+				9CC9517929035C6B00A13709 /* WallpapersViewController.xib in Resources */,
 				9C696BD528FAB42A0082EC40 /* down.json in Resources */,
 				9C696BD328FAB42A0082EC40 /* favourite.json in Resources */,
 				9C223CEB28F73B7E008F156A /* GoogleService-Info.plist in Resources */,
@@ -410,6 +427,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		302B0761ACC0A368005585AE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MasCover-iOS/Pods-MasCover-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MasCover-iOS/Pods-MasCover-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MasCover-iOS/Pods-MasCover-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		423C7E060A0E9F729ABCB89B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -476,6 +510,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C887F0A0ADFF94DE74F6723D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MasCover-iOS-MasCover-iOSUITests/Pods-MasCover-iOS-MasCover-iOSUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MasCover-iOS-MasCover-iOSUITests/Pods-MasCover-iOS-MasCover-iOSUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MasCover-iOS-MasCover-iOSUITests/Pods-MasCover-iOS-MasCover-iOSUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -489,6 +540,7 @@
 				9C223CB828F73B1F008F156A /* AppDelegate.swift in Sources */,
 				9C223CBA28F73B1F008F156A /* SceneDelegate.swift in Sources */,
 				9C223CC228F73B1F008F156A /* MasCover_iOS.xcdatamodeld in Sources */,
+				9CC9517829035C6B00A13709 /* WallpapersViewController.swift in Sources */,
 				9CC951702902F36B00A13709 /* Categorie.swift in Sources */,
 				9C696BDD28FC81660082EC40 /* HomeViewController.swift in Sources */,
 			);

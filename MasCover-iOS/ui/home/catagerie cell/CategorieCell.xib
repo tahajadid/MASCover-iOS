@@ -27,7 +27,7 @@
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hsv-Hx-IZN">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
-                        <fontDescription key="fontDescription" name="Mandarin-Regular" family="Mandarin" pointSize="24"/>
+                        <fontDescription key="fontDescription" name="Mandarin-Regular" family="Mandarin" pointSize="40"/>
                         <color key="textColor" systemColor="systemBackgroundColor"/>
                         <nil key="highlightedColor"/>
                     </label>

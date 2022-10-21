@@ -6,6 +6,7 @@ target 'MasCover-iOS' do
   use_frameworks!
 
   # Pods for MasCover-iOS
+  pod 'lottie-ios'
 
   target 'MasCover-iOSTests' do
     inherit! :search_paths
