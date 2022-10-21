@@ -38,6 +38,7 @@ class HomeViewController: UIViewController {
     func initViews(){
         
         drawCircles()
+        drawTopAndBottom()
         
         myAnimationView = .init(name: "loading")
         myAnimationView!.frame = animatedView.bounds
@@ -46,13 +47,6 @@ class HomeViewController: UIViewController {
         animatedView.addSubview(myAnimationView!)
         myAnimationView!.play()
 
-        self.topView.clipsToBounds = true
-        self.topView.layer.cornerRadius = 20
-        self.topView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
-        
-        self.bottomView.clipsToBounds = true
-        self.bottomView.layer.cornerRadius = 20
-        self.bottomView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         
         // Eliminate the hedear space inside TableView
         var frame = CGRect.zero
@@ -113,6 +107,17 @@ class HomeViewController: UIViewController {
         self.leftBottom.layer.cornerRadius = self.leftBottom.frame.width / 2
 
     }
+    
+    func drawTopAndBottom(){
+        self.topView.clipsToBounds = true
+        self.topView.layer.cornerRadius = 20
+        self.topView.layer.maskedCorners = [.layerMaxXMaxYCorner,.layerMinXMaxYCorner]
+        
+        self.bottomView.clipsToBounds = true
+        self.bottomView.layer.cornerRadius = 20
+        self.bottomView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
+        
+    }
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
@@ -139,6 +144,19 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
         return cell ?? UITableViewCell()
     }
 
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let wallpapersViewController = WallpapersViewController()
+        //starViewController.valueAmount = listOfPrices[indexPath.item]
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let navigationController = self.navigationController {
+              navigationController.pushViewController(wallpapersViewController, animated: true)
+            }
+        }
+        
+    }
     
 
 }
