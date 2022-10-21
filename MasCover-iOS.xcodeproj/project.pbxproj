@@ -29,6 +29,9 @@
 		9C696BD828FAFF5E0082EC40 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C696BD728FAFF5D0082EC40 /* UIViewExtension.swift */; };
 		9C696BDD28FC81660082EC40 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C696BDB28FC81650082EC40 /* HomeViewController.swift */; };
 		9C696BDE28FC81660082EC40 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C696BDC28FC81650082EC40 /* HomeViewController.xib */; };
+		9CC951702902F36B00A13709 /* Categorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC9516F2902F36B00A13709 /* Categorie.swift */; };
+		9CC951732903062700A13709 /* CategorieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC951712903062700A13709 /* CategorieCell.swift */; };
+		9CC951742903062700A13709 /* CategorieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC951722903062700A13709 /* CategorieCell.xib */; };
 		A931BC3A2AC727A5B9734FE9 /* Pods_MasCover_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7509280C7B38B0604E6C7403 /* Pods_MasCover_iOSTests.framework */; };
 		F5639731508A1E2E0D6C8D48 /* Pods_MasCover_iOS_MasCover_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7777D1DDC9724AA9D955525 /* Pods_MasCover_iOS_MasCover_iOSUITests.framework */; };
 /* End PBXBuildFile section */
@@ -80,6 +83,9 @@
 		9C696BD728FAFF5D0082EC40 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		9C696BDB28FC81650082EC40 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		9C696BDC28FC81650082EC40 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		9CC9516F2902F36B00A13709 /* Categorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorie.swift; sourceTree = "<group>"; };
+		9CC951712903062700A13709 /* CategorieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorieCell.swift; sourceTree = "<group>"; };
+		9CC951722903062700A13709 /* CategorieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorieCell.xib; sourceTree = "<group>"; };
 		D25B75957EFF9952EEAAF0D6 /* Pods-MasCover-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasCover-iOS.debug.xcconfig"; path = "Target Support Files/Pods-MasCover-iOS/Pods-MasCover-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D7777D1DDC9724AA9D955525 /* Pods_MasCover_iOS_MasCover_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasCover_iOS_MasCover_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -211,10 +217,29 @@
 		9C696BDA28FC81050082EC40 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				9CC9516E2902F35F00A13709 /* model */,
+				9CC951692902EC8100A13709 /* catagerie cell */,
 				9C696BDB28FC81650082EC40 /* HomeViewController.swift */,
 				9C696BDC28FC81650082EC40 /* HomeViewController.xib */,
 			);
 			path = home;
+			sourceTree = "<group>";
+		};
+		9CC951692902EC8100A13709 /* catagerie cell */ = {
+			isa = PBXGroup;
+			children = (
+				9CC951712903062700A13709 /* CategorieCell.swift */,
+				9CC951722903062700A13709 /* CategorieCell.xib */,
+			);
+			path = "catagerie cell";
+			sourceTree = "<group>";
+		};
+		9CC9516E2902F35F00A13709 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				9CC9516F2902F36B00A13709 /* Categorie.swift */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 		BD79D4E8DB3D26CF7C20A135 /* Frameworks */ = {
@@ -356,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C223CC728F73B23008F156A /* LaunchScreen.storyboard in Resources */,
+				9CC951742903062700A13709 /* CategorieCell.xib in Resources */,
 				9C696BD528FAB42A0082EC40 /* down.json in Resources */,
 				9C696BD328FAB42A0082EC40 /* favourite.json in Resources */,
 				9C223CEB28F73B7E008F156A /* GoogleService-Info.plist in Resources */,
@@ -458,10 +484,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C696BD828FAFF5E0082EC40 /* UIViewExtension.swift in Sources */,
+				9CC951732903062700A13709 /* CategorieCell.swift in Sources */,
 				9C223CBC28F73B1F008F156A /* ViewController.swift in Sources */,
 				9C223CB828F73B1F008F156A /* AppDelegate.swift in Sources */,
 				9C223CBA28F73B1F008F156A /* SceneDelegate.swift in Sources */,
 				9C223CC228F73B1F008F156A /* MasCover_iOS.xcdatamodeld in Sources */,
+				9CC951702902F36B00A13709 /* Categorie.swift in Sources */,
 				9C696BDD28FC81660082EC40 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
