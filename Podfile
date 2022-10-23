@@ -7,6 +7,8 @@ target 'MasCover-iOS' do
 
   # Pods for MasCover-iOS
   pod 'lottie-ios'
+  pod 'ShimmerSwift'
+  # pod 'FirebaseUI', '~> 8.0'
 
   target 'MasCover-iOSTests' do
     inherit! :search_paths

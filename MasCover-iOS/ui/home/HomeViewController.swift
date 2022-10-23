@@ -149,7 +149,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate{
         
         let wallpapersViewController = WallpapersViewController()
         //starViewController.valueAmount = listOfPrices[indexPath.item]
-        
+        wallpapersViewController.idCategorie = allCategories[indexPath.row].idCategorie ?? ""
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             if let navigationController = self.navigationController {
               navigationController.pushViewController(wallpapersViewController, animated: true)

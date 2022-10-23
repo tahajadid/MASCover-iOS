@@ -34,6 +34,9 @@
 		9CC951742903062700A13709 /* CategorieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC951722903062700A13709 /* CategorieCell.xib */; };
 		9CC9517829035C6B00A13709 /* WallpapersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC9517629035C6B00A13709 /* WallpapersViewController.swift */; };
 		9CC9517929035C6B00A13709 /* WallpapersViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC9517729035C6B00A13709 /* WallpapersViewController.xib */; };
+		9CC9518029055C4700A13709 /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC9517F29055C4700A13709 /* Wallpaper.swift */; };
+		9CC95184290560FC00A13709 /* CustomWallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC95182290560FC00A13709 /* CustomWallpaperCell.swift */; };
+		9CC95185290560FC00A13709 /* CustomWallpaperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC95183290560FC00A13709 /* CustomWallpaperCell.xib */; };
 		A931BC3A2AC727A5B9734FE9 /* Pods_MasCover_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7509280C7B38B0604E6C7403 /* Pods_MasCover_iOSTests.framework */; };
 		F5639731508A1E2E0D6C8D48 /* Pods_MasCover_iOS_MasCover_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7777D1DDC9724AA9D955525 /* Pods_MasCover_iOS_MasCover_iOSUITests.framework */; };
 /* End PBXBuildFile section */
@@ -90,6 +93,9 @@
 		9CC951722903062700A13709 /* CategorieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategorieCell.xib; sourceTree = "<group>"; };
 		9CC9517629035C6B00A13709 /* WallpapersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallpapersViewController.swift; sourceTree = "<group>"; };
 		9CC9517729035C6B00A13709 /* WallpapersViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WallpapersViewController.xib; sourceTree = "<group>"; };
+		9CC9517F29055C4700A13709 /* Wallpaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallpaper.swift; sourceTree = "<group>"; };
+		9CC95182290560FC00A13709 /* CustomWallpaperCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomWallpaperCell.swift; sourceTree = "<group>"; };
+		9CC95183290560FC00A13709 /* CustomWallpaperCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomWallpaperCell.xib; sourceTree = "<group>"; };
 		D25B75957EFF9952EEAAF0D6 /* Pods-MasCover-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasCover-iOS.debug.xcconfig"; path = "Target Support Files/Pods-MasCover-iOS/Pods-MasCover-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D7777D1DDC9724AA9D955525 /* Pods_MasCover_iOS_MasCover_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasCover_iOS_MasCover_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -243,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				9CC9516F2902F36B00A13709 /* Categorie.swift */,
+				9CC9517F29055C4700A13709 /* Wallpaper.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -250,10 +257,20 @@
 		9CC9517529035C4300A13709 /* wallpapers */ = {
 			isa = PBXGroup;
 			children = (
+				9CC9517A2905586D00A13709 /* wallpaper cell */,
 				9CC9517629035C6B00A13709 /* WallpapersViewController.swift */,
 				9CC9517729035C6B00A13709 /* WallpapersViewController.xib */,
 			);
 			path = wallpapers;
+			sourceTree = "<group>";
+		};
+		9CC9517A2905586D00A13709 /* wallpaper cell */ = {
+			isa = PBXGroup;
+			children = (
+				9CC95182290560FC00A13709 /* CustomWallpaperCell.swift */,
+				9CC95183290560FC00A13709 /* CustomWallpaperCell.xib */,
+			);
+			path = "wallpaper cell";
 			sourceTree = "<group>";
 		};
 		BD79D4E8DB3D26CF7C20A135 /* Frameworks */ = {
@@ -397,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C223CC728F73B23008F156A /* LaunchScreen.storyboard in Resources */,
+				9CC95185290560FC00A13709 /* CustomWallpaperCell.xib in Resources */,
 				9CC951742903062700A13709 /* CategorieCell.xib in Resources */,
 				9CC9517929035C6B00A13709 /* WallpapersViewController.xib in Resources */,
 				9C696BD528FAB42A0082EC40 /* down.json in Resources */,
@@ -539,6 +557,8 @@
 				9C223CBC28F73B1F008F156A /* ViewController.swift in Sources */,
 				9C223CB828F73B1F008F156A /* AppDelegate.swift in Sources */,
 				9C223CBA28F73B1F008F156A /* SceneDelegate.swift in Sources */,
+				9CC9518029055C4700A13709 /* Wallpaper.swift in Sources */,
+				9CC95184290560FC00A13709 /* CustomWallpaperCell.swift in Sources */,
 				9C223CC228F73B1F008F156A /* MasCover_iOS.xcdatamodeld in Sources */,
 				9CC9517829035C6B00A13709 /* WallpapersViewController.swift in Sources */,
 				9CC951702902F36B00A13709 /* Categorie.swift in Sources */,
