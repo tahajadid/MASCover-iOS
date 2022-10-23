@@ -6,16 +6,27 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseFirestore
+import Lottie
 
 class WallpapersViewController: UIViewController {
 
     @IBOutlet weak var topView: UIView!
-    @IBOutlet weak var categorieTable: UITableView!
     @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var animatedView: UIView!
     @IBOutlet weak var centerBottom: UIView!
     @IBOutlet weak var leftBottom: UIView!
     @IBOutlet weak var rightBottom: UIView!
+    @IBOutlet weak var backImage: UIButton!
+    @IBOutlet weak var wallpaperCollection: UICollectionView!
+    @IBOutlet weak var wallpaperCollectionViewFlow: UICollectionViewFlowLayout!
+    
+    
+    var idCategorie : String = ""
+    var allWallpapers:[Wallpaper] = [Wallpaper]()
+    private var myAnimationView: AnimationView?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +34,85 @@ class WallpapersViewController: UIViewController {
 
         drawCircles()
         drawTopAndBottom()
+        initLoader()
         
-        // Do any additional setup after loading the view.
+        backImage.addTarget(self, action: #selector(didBackClick), for: .touchUpInside)
+        
+        fetchData()
+        
     }
 
+    
+    @objc func didBackClick(_ sender: AnyObject?) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let navigationController = self.navigationController {
+              navigationController.pushViewController(HomeViewController(), animated: true)
+            }
+        }
+        
+    }
+    
+    func initLoader(){
+        myAnimationView = .init(name: "loading")
+        myAnimationView!.frame = animatedView.bounds
+        myAnimationView!.contentMode = .scaleAspectFill
+        myAnimationView!.loopMode = .repeat(1.0)
+        animatedView.addSubview(myAnimationView!)
+        myAnimationView!.play()
+    }
+    
+    private func initCollectionView() {
+        wallpaperCollectionViewFlow.collectionView?.delegate = self
+        let nib = UINib(nibName: "CustomWallpaperCell", bundle: nil)
+        wallpaperCollection.register(nib, forCellWithReuseIdentifier: "CustomWallpaperCell")
+        wallpaperCollection.dataSource = self
+    }
+    
+    func fetchData(){
+        
+        let db = Firestore.firestore()
+
+      
+        db.collection("wallpaper")
+            .whereField("idCategorie", isEqualTo: self.idCategorie)
+            .getDocuments() {
+                (querySnapshot, err) in
+                    if let err = err {
+                        print("-- Error getting documents: \(err)")
+                    } else {
+                        var index = 0
+                        for document in querySnapshot!.documents {
+                            print("-- \(document.documentID) => \(document.data())")
+                            self.allWallpapers.insert(
+                                Wallpaper(
+                                    idWallpaper: document.data()["idWallpaper"] as? String ?? "",
+                                    idCategorie: document.data()["idCategorie"] as? String ?? "",
+                                    numberDislike: document.data()["numberDislike"] as? Int ?? 0,
+                                    numberLike: document.data()["numberLike"] as? Int ?? 0,
+                                    numberDownload: document.data()["numberDownload"] as? Int ?? 0,
+                                    pathPoster: document.data()["pathPoster"] as? String ?? ""),
+                                at: index)
+                            index+=1
+                        }
+                        
+                        // Reload Data
+                        DispatchQueue.main.async {
+
+                            self.animatedView.isHidden = true
+                            self.initCollectionView()
+                            /*
+                            self.categorieTable.register(CategorieCell.nib(), forCellReuseIdentifier: CategorieCell.nibname)
+                            self.wallpaperCollection.delegate = self
+                            self.wallpaperCollection.dataSource = self
+                            
+                            self.wallpaperCollection.reloadData()
+                        */
+                             }
+                    }
+            }
+        
+        
+    }
     
     func drawCircles(){
         self.centerBottom.layer.borderWidth = 3
@@ -52,5 +138,40 @@ class WallpapersViewController: UIViewController {
         self.bottomView.layer.cornerRadius = 20
         self.bottomView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         
+    }
+    
+}
+
+extension WallpapersViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return allWallpapers.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomWallpaperCell", for: indexPath) as? CustomWallpaperCell else {
+            fatalError("can't dequeue CustomCell")
+        }
+        cell.wallpaperTitle.text = "\(self.allWallpapers[indexPath.item].idWallpaper ?? "")"
+        cell.setImage(self.allWallpapers[indexPath.item].pathPoster ?? "")
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let homeViewController = HomeViewController()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let navigationController = self.navigationController {
+              navigationController.pushViewController(homeViewController, animated: true)
+            }
+        }
+        
+    }
+}
+
+extension WallpapersViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: self.view.frame.width/2 - 10, height: self.view.frame.height/3 - 10)
     }
 }
