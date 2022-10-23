@@ -158,11 +158,11 @@ extension WallpapersViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let homeViewController = HomeViewController()
+        let detailViewController = DetailViewController()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             if let navigationController = self.navigationController {
-              navigationController.pushViewController(homeViewController, animated: true)
+              navigationController.pushViewController(detailViewController, animated: true)
             }
         }
         
