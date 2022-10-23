@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="MasCover_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomLeft" destination="Q1r-6e-AiR" id="PcI-OS-qcB"/>
+                <outlet property="bottomRight" destination="Q1r-6e-AiR" id="1tT-xq-cGZ"/>
+                <outlet property="download" destination="R9b-h2-Ovf" id="qxi-QR-FO8"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="wallpaperImage" destination="4H7-O9-qxE" id="YsU-OP-Q3T"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTG-tu-jGi" userLabel="phone_holder">
+                    <rect key="frame" x="37" y="192" width="340" height="650"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mas_cover" translatesAutoresizingMaskIntoConstraints="NO" id="4H7-O9-qxE" userLabel="wallpaper">
+                            <rect key="frame" x="24" y="16" width="292" height="614"/>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone_mock" translatesAutoresizingMaskIntoConstraints="NO" id="PSX-B8-JKo">
+                            <rect key="frame" x="0.0" y="0.0" width="340" height="650"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="650" id="5jZ-R3-C5m"/>
+                        <constraint firstAttribute="bottom" secondItem="4H7-O9-qxE" secondAttribute="bottom" constant="20" id="7hq-Mr-WZf"/>
+                        <constraint firstAttribute="trailing" secondItem="4H7-O9-qxE" secondAttribute="trailing" constant="24" id="9qw-sb-0Wr"/>
+                        <constraint firstItem="4H7-O9-qxE" firstAttribute="leading" secondItem="HTG-tu-jGi" secondAttribute="leading" constant="24" id="Be9-fC-1AE"/>
+                        <constraint firstItem="PSX-B8-JKo" firstAttribute="top" secondItem="HTG-tu-jGi" secondAttribute="top" id="ET4-kd-ohX"/>
+                        <constraint firstAttribute="bottom" secondItem="PSX-B8-JKo" secondAttribute="bottom" id="aBp-BF-xAn"/>
+                        <constraint firstItem="4H7-O9-qxE" firstAttribute="top" secondItem="HTG-tu-jGi" secondAttribute="top" constant="16" id="lh2-eW-C8o"/>
+                        <constraint firstAttribute="width" constant="340" id="mfO-gA-mP1"/>
+                        <constraint firstItem="PSX-B8-JKo" firstAttribute="leading" secondItem="HTG-tu-jGi" secondAttribute="leading" id="nbT-b6-Esf"/>
+                        <constraint firstAttribute="trailing" secondItem="PSX-B8-JKo" secondAttribute="trailing" id="oU4-1g-i3o"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KiB-3J-jNi">
+                    <rect key="frame" x="224" y="796" width="190" height="100"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="CYG-fj-hhv"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1r-6e-AiR">
+                    <rect key="frame" x="0.0" y="796" width="224" height="100"/>
+                    <color key="backgroundColor" systemColor="systemYellowColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Wsx-Np-Zth"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R9b-h2-Ovf">
+                    <rect key="frame" x="167" y="748" width="80" height="80"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="tG7-9N-g61">
+                            <rect key="frame" x="20" y="0.0" width="40" height="80"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.85815263605442171" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="tG7-9N-g61" firstAttribute="top" secondItem="R9b-h2-Ovf" secondAttribute="top" id="GFl-P6-1GM"/>
+                        <constraint firstAttribute="width" constant="80" id="Hwp-Lj-mCp"/>
+                        <constraint firstItem="tG7-9N-g61" firstAttribute="leading" secondItem="R9b-h2-Ovf" secondAttribute="leading" constant="20" id="NiX-vZ-iiK"/>
+                        <constraint firstAttribute="bottom" secondItem="tG7-9N-g61" secondAttribute="bottom" id="beO-PO-Dg0"/>
+                        <constraint firstAttribute="height" constant="80" id="dJT-EG-KRJ"/>
+                        <constraint firstAttribute="trailing" secondItem="tG7-9N-g61" secondAttribute="trailing" constant="20" id="gde-LY-5XF"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.29999999999999999" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tiger_claw" translatesAutoresizingMaskIntoConstraints="NO" id="HYQ-Zo-Fvi">
+                    <rect key="frame" x="0.0" y="0.0" width="276" height="383"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="R9b-h2-Ovf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0r7-hf-X35"/>
+                <constraint firstItem="KiB-3J-jNi" firstAttribute="leading" secondItem="Q1r-6e-AiR" secondAttribute="trailing" id="3ya-zW-SKq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="R9b-h2-Ovf" secondAttribute="bottom" constant="34" id="JAA-jO-sDu"/>
+                <constraint firstItem="HTG-tu-jGi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Q58-hI-bmr"/>
+                <constraint firstItem="Q1r-6e-AiR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Qs5-Ao-NIb"/>
+                <constraint firstItem="KiB-3J-jNi" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="XvJ-Lz-KMC"/>
+                <constraint firstAttribute="bottom" secondItem="Q1r-6e-AiR" secondAttribute="bottom" id="Zjk-CT-mtk"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Q1r-6e-AiR" secondAttribute="trailing" constant="190" id="mbD-YG-2fC"/>
+                <constraint firstAttribute="bottom" secondItem="KiB-3J-jNi" secondAttribute="bottom" id="rCs-Ug-WTe"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="HTG-tu-jGi" secondAttribute="bottom" constant="20" id="uF5-pM-eGF"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="77.678571428571431"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="download" width="512" height="512"/>
+        <image name="iphone_mock" width="248" height="500"/>
+        <image name="mas_cover" width="512" height="190"/>
+        <image name="tiger_claw" width="971" height="1155"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
