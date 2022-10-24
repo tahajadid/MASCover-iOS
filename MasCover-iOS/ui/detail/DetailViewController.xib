@@ -28,8 +28,9 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTG-tu-jGi" userLabel="phone_holder">
                     <rect key="frame" x="37" y="192" width="340" height="650"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footbal_cover" translatesAutoresizingMaskIntoConstraints="NO" id="4H7-O9-qxE" userLabel="wallpaper">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4H7-O9-qxE" userLabel="wallpaper">
                             <rect key="frame" x="24" y="16" width="292" height="614"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone_mock" translatesAutoresizingMaskIntoConstraints="NO" id="PSX-B8-JKo">
                             <rect key="frame" x="0.0" y="0.0" width="340" height="650"/>
@@ -154,7 +155,6 @@
     <resources>
         <image name="dislike" width="512" height="512"/>
         <image name="download" width="512" height="512"/>
-        <image name="footbal_cover" width="512" height="190"/>
         <image name="img_1" width="201" height="201"/>
         <image name="iphone_mock" width="248" height="500"/>
         <image name="like" width="512" height="512"/>

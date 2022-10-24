@@ -12,7 +12,6 @@ import FirebaseStorage
 class CustomWallpaperCell: UICollectionViewCell {
 
     @IBOutlet weak var wallpaperImage: UIImageView!
-    @IBOutlet weak var wallpaperTitle: UILabel!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     
@@ -50,18 +49,6 @@ class CustomWallpaperCell: UICollectionViewCell {
                 }
              }
         }
-        
-        // Load the image using SDWebImage
-        //imageView.sd_setImage(with: reference, placeholderImage: UIImage(named: "App-Default"))
-
-        /*
-        // Use gs:// URL directly with StorageImageLoader
-        let storageUrl = URL(string: "gs://mas-cover.appspot.com")
-        imageView.sd_setImage(with: storageUrl, placeholderImage: placeholderImage, options:[], context: [.imageLoader : StorageImageLoader.shared])
-
-        // Use progressive downloading and decoding for images
-        imageView.sd_setImage(with: reference, placeholderImage: placeholderImage, options: [.progressiveLoad])
-         */
         
     }
     
