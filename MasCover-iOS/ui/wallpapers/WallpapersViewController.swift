@@ -157,15 +157,15 @@ extension WallpapersViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomWallpaperCell", for: indexPath) as? CustomWallpaperCell else {
             fatalError("can't dequeue CustomCell")
         }
-        cell.wallpaperTitle.text = "\(self.allWallpapers[indexPath.item].idWallpaper ?? "")"
         cell.setImage(self.allWallpapers[indexPath.item].pathPoster ?? "")
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let detailViewController = DetailViewController()
         
+        let detailViewController = DetailViewController()
+        detailViewController.pathWallpaper = allWallpapers[indexPath.row].pathPoster ?? ""
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             if let navigationController = self.navigationController {
               navigationController.pushViewController(detailViewController, animated: true)

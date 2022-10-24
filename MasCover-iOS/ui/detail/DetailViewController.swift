@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseCore
+import FirebaseStorage
 
 class DetailViewController: UIViewController {
 
@@ -17,11 +19,16 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var dislikeImage: UIImageView!
     
     
+    var pathWallpaper : String = ""
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.setHidesBackButton(true, animated: true)
 
         initCorners()
         initView()
+        
+        setImage(pathWallpaper)
         
     }
 
@@ -97,4 +104,26 @@ class DetailViewController: UIViewController {
         }
     }
      
+    func setImage(_ pathWallpapaer: String){
+        
+        let store = Storage.storage()
+        let storeRef = store.reference()
+        
+        // Reference to an image file in Cloud Storage
+        let reference: StorageReference = storeRef.child(pathWallpapaer)
+
+        
+        reference.getData(maxSize: (1 * 1024 * 1024)) { (data, error) in
+            if let err = error {
+                   print(err)
+              } else {
+                if let image  = data {
+                     let myImage: UIImage! = UIImage(data: image)
+                    self.wallpaperImage.image = myImage
+                     // Use Image
+                }
+             }
+        }
+        
+    }
 }
