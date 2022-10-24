@@ -18,10 +18,9 @@ class WallpapersViewController: UIViewController {
     @IBOutlet weak var centerBottom: UIView!
     @IBOutlet weak var leftBottom: UIView!
     @IBOutlet weak var rightBottom: UIView!
-    @IBOutlet weak var backImage: UIButton!
     @IBOutlet weak var wallpaperCollection: UICollectionView!
     @IBOutlet weak var wallpaperCollectionViewFlow: UICollectionViewFlowLayout!
-    
+    @IBOutlet weak var backView: UIView!
     
     var idCategorie : String = ""
     var allWallpapers:[Wallpaper] = [Wallpaper]()
@@ -35,21 +34,16 @@ class WallpapersViewController: UIViewController {
         drawCircles()
         drawTopAndBottom()
         initLoader()
-        
-        backImage.addTarget(self, action: #selector(didBackClick), for: .touchUpInside)
-        
+        initAction()
+                
         fetchData()
         
     }
 
     
-    @objc func didBackClick(_ sender: AnyObject?) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            if let navigationController = self.navigationController {
-              navigationController.pushViewController(HomeViewController(), animated: true)
-            }
-        }
-        
+    func initAction(){
+        let gestureBack = UITapGestureRecognizer(target: self, action:  #selector (self.backAction (_:)))
+        self.backView.addGestureRecognizer(gestureBack)
     }
     
     func initLoader(){
@@ -66,6 +60,18 @@ class WallpapersViewController: UIViewController {
         let nib = UINib(nibName: "CustomWallpaperCell", bundle: nil)
         wallpaperCollection.register(nib, forCellWithReuseIdentifier: "CustomWallpaperCell")
         wallpaperCollection.dataSource = self
+    }
+    
+    
+    @objc func backAction(_ sender:UITapGestureRecognizer){
+        // do other task
+        let homeViewController = HomeViewController()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let navigationController = self.navigationController {
+              navigationController.pushViewController(homeViewController, animated: true)
+            }
+        }
     }
     
     func fetchData(){

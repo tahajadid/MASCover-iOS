@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +13,9 @@
             <connections>
                 <outlet property="bottomLeft" destination="Q1r-6e-AiR" id="PcI-OS-qcB"/>
                 <outlet property="bottomRight" destination="Q1r-6e-AiR" id="1tT-xq-cGZ"/>
+                <outlet property="dislikeImage" destination="nU8-i6-Mlk" id="tUB-WE-OIY"/>
                 <outlet property="download" destination="R9b-h2-Ovf" id="qxi-QR-FO8"/>
+                <outlet property="likeImage" destination="nU8-i6-Mlk" id="CJq-89-Tm7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="wallpaperImage" destination="4H7-O9-qxE" id="YsU-OP-Q3T"/>
             </connections>
@@ -25,7 +28,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HTG-tu-jGi" userLabel="phone_holder">
                     <rect key="frame" x="37" y="192" width="340" height="650"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mas_cover" translatesAutoresizingMaskIntoConstraints="NO" id="4H7-O9-qxE" userLabel="wallpaper">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="footbal_cover" translatesAutoresizingMaskIntoConstraints="NO" id="4H7-O9-qxE" userLabel="wallpaper">
                             <rect key="frame" x="24" y="16" width="292" height="614"/>
                         </imageView>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone_mock" translatesAutoresizingMaskIntoConstraints="NO" id="PSX-B8-JKo">
@@ -48,32 +51,81 @@
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KiB-3J-jNi">
                     <rect key="frame" x="224" y="796" width="190" height="100"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vos Avis" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="akp-qv-dpx">
+                            <rect key="frame" x="20" y="39" width="64" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <color key="textColor" name="AccentColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="Mbo-3S-MiS">
+                            <rect key="frame" x="101" y="37" width="33" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="4TE-ir-PCq"/>
+                                <constraint firstAttribute="width" constant="33" id="r1a-Ta-Kbg"/>
+                            </constraints>
+                        </imageView>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dislike" translatesAutoresizingMaskIntoConstraints="NO" id="nU8-i6-Mlk">
+                            <rect key="frame" x="142" y="47" width="33" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="33" id="8rm-Cl-3cf"/>
+                                <constraint firstAttribute="height" constant="25" id="YX0-6j-JYU"/>
+                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="33" id="kFX-yx-scO"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="mSZ-oT-oAk"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstAttribute="bottom" secondItem="akp-qv-dpx" secondAttribute="bottom" constant="40" id="4xq-hw-trd"/>
                         <constraint firstAttribute="height" constant="100" id="CYG-fj-hhv"/>
+                        <constraint firstItem="akp-qv-dpx" firstAttribute="leading" secondItem="KiB-3J-jNi" secondAttribute="leading" constant="20" id="DKo-jV-kZZ"/>
+                        <constraint firstAttribute="trailing" secondItem="nU8-i6-Mlk" secondAttribute="trailing" constant="15" id="dIU-wJ-5FE"/>
+                        <constraint firstAttribute="bottom" secondItem="Mbo-3S-MiS" secondAttribute="bottom" constant="38" id="eBQ-Bf-Nbx"/>
+                        <constraint firstAttribute="bottom" secondItem="nU8-i6-Mlk" secondAttribute="bottom" constant="28" id="fFZ-jK-h1h"/>
+                        <constraint firstItem="Mbo-3S-MiS" firstAttribute="leading" secondItem="akp-qv-dpx" secondAttribute="trailing" constant="17" id="lWp-Wt-ZJf"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q1r-6e-AiR">
                     <rect key="frame" x="0.0" y="796" width="224" height="100"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="img_1" translatesAutoresizingMaskIntoConstraints="NO" id="aqy-HO-y0X">
+                            <rect key="frame" x="156.5" y="29" width="35" height="41"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="6I5-Qp-SFP"/>
+                                <constraint firstAttribute="height" constant="41" id="GlZ-JX-Mo8"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Définir Font Ecran" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIm-hJ-WTt">
+                            <rect key="frame" x="10" y="39" width="136.5" height="21"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemYellowColor"/>
                     <constraints>
+                        <constraint firstItem="QIm-hJ-WTt" firstAttribute="leading" secondItem="Q1r-6e-AiR" secondAttribute="leading" constant="10" id="G6f-66-gFd"/>
+                        <constraint firstItem="aqy-HO-y0X" firstAttribute="leading" secondItem="QIm-hJ-WTt" secondAttribute="trailing" constant="10" id="M0C-wb-6E6"/>
                         <constraint firstAttribute="height" constant="100" id="Wsx-Np-Zth"/>
+                        <constraint firstAttribute="bottom" secondItem="aqy-HO-y0X" secondAttribute="bottom" constant="30" id="kIe-uV-ks0"/>
+                        <constraint firstAttribute="bottom" secondItem="QIm-hJ-WTt" secondAttribute="bottom" constant="40" id="nhQ-Gl-kbW"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R9b-h2-Ovf">
-                    <rect key="frame" x="167" y="748" width="80" height="80"/>
+                    <rect key="frame" x="172" y="754" width="70" height="70"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download" translatesAutoresizingMaskIntoConstraints="NO" id="tG7-9N-g61">
-                            <rect key="frame" x="20" y="0.0" width="40" height="80"/>
+                            <rect key="frame" x="20" y="0.0" width="30" height="70"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.85815263605442171" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="tG7-9N-g61" firstAttribute="top" secondItem="R9b-h2-Ovf" secondAttribute="top" id="GFl-P6-1GM"/>
-                        <constraint firstAttribute="width" constant="80" id="Hwp-Lj-mCp"/>
+                        <constraint firstAttribute="width" constant="70" id="Hwp-Lj-mCp"/>
                         <constraint firstItem="tG7-9N-g61" firstAttribute="leading" secondItem="R9b-h2-Ovf" secondAttribute="leading" constant="20" id="NiX-vZ-iiK"/>
                         <constraint firstAttribute="bottom" secondItem="tG7-9N-g61" secondAttribute="bottom" id="beO-PO-Dg0"/>
-                        <constraint firstAttribute="height" constant="80" id="dJT-EG-KRJ"/>
+                        <constraint firstAttribute="height" constant="70" id="dJT-EG-KRJ"/>
                         <constraint firstAttribute="trailing" secondItem="tG7-9N-g61" secondAttribute="trailing" constant="20" id="gde-LY-5XF"/>
                     </constraints>
                 </view>
@@ -87,7 +139,7 @@
             <constraints>
                 <constraint firstItem="R9b-h2-Ovf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0r7-hf-X35"/>
                 <constraint firstItem="KiB-3J-jNi" firstAttribute="leading" secondItem="Q1r-6e-AiR" secondAttribute="trailing" id="3ya-zW-SKq"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="R9b-h2-Ovf" secondAttribute="bottom" constant="34" id="JAA-jO-sDu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="R9b-h2-Ovf" secondAttribute="bottom" constant="38" id="JAA-jO-sDu"/>
                 <constraint firstItem="HTG-tu-jGi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Q58-hI-bmr"/>
                 <constraint firstItem="Q1r-6e-AiR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Qs5-Ao-NIb"/>
                 <constraint firstItem="KiB-3J-jNi" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="XvJ-Lz-KMC"/>
@@ -100,10 +152,16 @@
         </view>
     </objects>
     <resources>
+        <image name="dislike" width="512" height="512"/>
         <image name="download" width="512" height="512"/>
+        <image name="footbal_cover" width="512" height="190"/>
+        <image name="img_1" width="201" height="201"/>
         <image name="iphone_mock" width="248" height="500"/>
-        <image name="mas_cover" width="512" height="190"/>
+        <image name="like" width="512" height="512"/>
         <image name="tiger_claw" width="971" height="1155"/>
+        <namedColor name="AccentColor">
+            <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
