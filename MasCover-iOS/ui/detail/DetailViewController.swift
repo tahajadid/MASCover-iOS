@@ -62,13 +62,8 @@ class DetailViewController: UIViewController {
 
     @objc func downloadAction(_ sender:UITapGestureRecognizer){
         // do other task
-        let homeViewController = HomeViewController()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            if let navigationController = self.navigationController {
-              navigationController.pushViewController(homeViewController, animated: true)
-            }
-        }
+        UIImageWriteToSavedPhotosAlbum(self.wallpaperImage.image!, nil, nil, nil)
+
     }
     
     @objc func wallpaperdAction(_ sender:UITapGestureRecognizer){
@@ -118,9 +113,8 @@ class DetailViewController: UIViewController {
                    print(err)
               } else {
                 if let image  = data {
-                     let myImage: UIImage! = UIImage(data: image)
+                    let myImage: UIImage! = UIImage(data: image)
                     self.wallpaperImage.image = myImage
-                     // Use Image
                 }
              }
         }

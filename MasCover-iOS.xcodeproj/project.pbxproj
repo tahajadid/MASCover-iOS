@@ -195,6 +195,13 @@
 			path = "MasCover-iOSUITests";
 			sourceTree = "<group>";
 		};
+		9C4BE12A290824EB00246F31 /* setting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = setting;
+			sourceTree = "<group>";
+		};
 		9C696BCC28F7715D0082EC40 /* font */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +231,7 @@
 		9C696BD928FC80FE0082EC40 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				9C4BE12A290824EB00246F31 /* setting */,
 				9CC951862905B4F300A13709 /* detail */,
 				9CC9517529035C4300A13709 /* wallpapers */,
 				9C696BDA28FC81050082EC40 /* home */,
@@ -756,8 +764,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CSPGA9YPWD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MasCover-iOS/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Save photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -784,8 +794,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = CSPGA9YPWD;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "MasCover-iOS/Info.plist";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "Save photos";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
