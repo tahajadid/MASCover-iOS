@@ -61,14 +61,13 @@
                     <view key="tableHeaderView" contentMode="scaleToFill" id="ruV-Lz-eMc">
                         <rect key="frame" x="0.0" y="0.0" width="394" height="44"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.96748737370000004" green="0.96748737370000004" blue="0.96748737370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                 </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CATÉGORIE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fSO-tS-Rj0">
                     <rect key="frame" x="10" y="140" width="143" height="35"/>
                     <fontDescription key="fontDescription" name="Mandarin-Regular" family="Mandarin" pointSize="30"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q6v-3a-kWz" userLabel="BlackView">
                     <rect key="frame" x="161" y="154" width="253" height="3"/>
@@ -146,7 +145,8 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.96748737370000004" green="0.96748737370000004" blue="0.96748737370000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color key="tintColor" red="0.9674873737373737" green="0.9674873737373737" blue="0.9674873737373737" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="TXD-qE-Xay" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0tm-Ud-5Bh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9Zp-4j-rws" secondAttribute="trailing" id="9P3-Y5-7ZO"/>

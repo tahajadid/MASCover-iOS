@@ -53,8 +53,8 @@ class CustomWallpaperCell: UICollectionViewCell {
     }
     
     func startAnimating() {
-        var gradientColorOne : CGColor = UIColor(white: 0.85, alpha: 1.0).cgColor
-        var gradientColorTwo : CGColor = UIColor(white: 0.95, alpha: 1.0).cgColor
+        let gradientColorOne : CGColor = UIColor(white: 0.85, alpha: 1.0).cgColor
+        let gradientColorTwo : CGColor = UIColor(white: 0.95, alpha: 1.0).cgColor
         let gradientLayer = CAGradientLayer()
         /* Allocate the frame of the gradient layer as the view's bounds, since the layer will sit on top of the view. */
           
