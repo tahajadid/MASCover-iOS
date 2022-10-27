@@ -17,7 +17,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var download: UIView!
     @IBOutlet weak var likeImage: UIImageView!
     @IBOutlet weak var dislikeImage: UIImageView!
-    
+    @IBOutlet weak var backView: UIView!
     
     var pathWallpaper : String = ""
 
@@ -35,12 +35,22 @@ class DetailViewController: UIViewController {
     func initView(){
         let gestureDownload = UITapGestureRecognizer(target: self, action:  #selector (self.downloadAction (_:)))
         self.download.addGestureRecognizer(gestureDownload)
+        
+        let gestureBack = UITapGestureRecognizer(target: self, action:  #selector (self.backAction (_:)))        
+        self.backView.addGestureRecognizer(gestureBack)
+        
+        /*
+        let gestureSetWallpaper = UITapGestureRecognizer(target: self, action:  #selector (self.wallpaperdAction (_:)))
+        self.download.addGestureRecognizer(gestureSetWallpaper)
+        
 
         let gestureSetLike = UITapGestureRecognizer(target: self, action:  #selector (self.likeAction (_:)))
         self.bottomLeft.addGestureRecognizer(gestureSetLike)
         
         let gestureSetDislike = UITapGestureRecognizer(target: self, action:  #selector (self.dislikeAction (_:)))
-        self.bottomRight.addGestureRecognizer(gestureSetDislike)
+        self.download.addGestureRecognizer(gestureSetDislike)
+         
+         */
 
     }
     
@@ -60,6 +70,12 @@ class DetailViewController: UIViewController {
     @objc func downloadAction(_ sender:UITapGestureRecognizer){
         // do other task
         UIImageWriteToSavedPhotosAlbum(self.wallpaperImage.image!, nil, nil, nil)
+
+    }
+    
+    @objc func backAction(_ sender:UITapGestureRecognizer){
+
+        navigationController?.popViewController(animated: true)
 
     }
     
