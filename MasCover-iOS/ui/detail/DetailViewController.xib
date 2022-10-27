@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,8 +15,9 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="MasCover_iOS" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="Mas_Cover" customModuleProvider="target">
             <connections>
+                <outlet property="backView" destination="woN-zX-GWp" id="ibc-aj-I9M"/>
                 <outlet property="bottomLeft" destination="Q1r-6e-AiR" id="PcI-OS-qcB"/>
                 <outlet property="bottomRight" destination="Q1r-6e-AiR" id="1tT-xq-cGZ"/>
                 <outlet property="dislikeImage" destination="nU8-i6-Mlk" id="tUB-WE-OIY"/>
@@ -88,7 +90,7 @@
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="Mbo-3S-MiS">
                             <rect key="frame" x="162" y="25" width="33" height="25"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="4TE-ir-PCq"/>
                                 <constraint firstAttribute="width" constant="33" id="r1a-Ta-Kbg"/>
@@ -131,6 +133,23 @@
                     <rect key="frame" x="0.0" y="0.0" width="276" height="383"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="woN-zX-GWp">
+                    <rect key="frame" x="20" y="28" width="50" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="left_arrow" translatesAutoresizingMaskIntoConstraints="NO" id="OeH-ud-1WE">
+                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="OeH-ud-1WE" secondAttribute="trailing" id="1yt-Kh-cFy"/>
+                        <constraint firstAttribute="width" constant="50" id="Eam-sB-bnu"/>
+                        <constraint firstAttribute="bottom" secondItem="OeH-ud-1WE" secondAttribute="bottom" id="TPL-Td-khS"/>
+                        <constraint firstAttribute="height" constant="50" id="d0H-jy-dVv"/>
+                        <constraint firstItem="OeH-ud-1WE" firstAttribute="leading" secondItem="woN-zX-GWp" secondAttribute="leading" id="ioI-uW-VG9"/>
+                        <constraint firstItem="OeH-ud-1WE" firstAttribute="top" secondItem="woN-zX-GWp" secondAttribute="top" id="tdW-e1-jQl"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemGray6Color"/>
@@ -138,6 +157,8 @@
                 <constraint firstItem="R9b-h2-Ovf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0r7-hf-X35"/>
                 <constraint firstItem="KiB-3J-jNi" firstAttribute="leading" secondItem="Q1r-6e-AiR" secondAttribute="trailing" id="3ya-zW-SKq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="R9b-h2-Ovf" secondAttribute="bottom" constant="38" id="JAA-jO-sDu"/>
+                <constraint firstItem="woN-zX-GWp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="KKQ-uA-o7Q"/>
+                <constraint firstItem="woN-zX-GWp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-20" id="L8w-Vy-XXe"/>
                 <constraint firstItem="HTG-tu-jGi" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Q58-hI-bmr"/>
                 <constraint firstItem="Q1r-6e-AiR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Qs5-Ao-NIb"/>
                 <constraint firstItem="KiB-3J-jNi" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="XvJ-Lz-KMC"/>
@@ -153,6 +174,7 @@
         <image name="dislike" width="512" height="512"/>
         <image name="download" width="512" height="512"/>
         <image name="iphone_mock" width="248" height="500"/>
+        <image name="left_arrow" width="128" height="128"/>
         <image name="like" width="512" height="512"/>
         <image name="tiger_claw" width="971" height="1155"/>
         <namedColor name="AccentColor">
