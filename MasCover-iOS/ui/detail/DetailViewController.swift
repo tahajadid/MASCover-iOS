@@ -47,8 +47,9 @@ class DetailViewController: UIViewController {
         let gestureSetWallpaper = UITapGestureRecognizer(target: self, action:  #selector (self.wallpaperdAction (_:)))
         self.download.addGestureRecognizer(gestureSetWallpaper)
         
+
         let gestureSetLike = UITapGestureRecognizer(target: self, action:  #selector (self.likeAction (_:)))
-        self.download.addGestureRecognizer(gestureSetLike)
+        self.bottomLeft.addGestureRecognizer(gestureSetLike)
         
         let gestureSetDislike = UITapGestureRecognizer(target: self, action:  #selector (self.dislikeAction (_:)))
         self.download.addGestureRecognizer(gestureSetDislike)
