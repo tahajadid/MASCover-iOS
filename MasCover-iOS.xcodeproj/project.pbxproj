@@ -39,6 +39,8 @@
 		9CC95185290560FC00A13709 /* CustomWallpaperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC95183290560FC00A13709 /* CustomWallpaperCell.xib */; };
 		9CC951892905B54F00A13709 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC951872905B54F00A13709 /* DetailViewController.swift */; };
 		9CC9518A2905B54F00A13709 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC951882905B54F00A13709 /* DetailViewController.xib */; };
+		9CE91F9B290D780700D70B8C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE91F99290D780700D70B8C /* SettingViewController.swift */; };
+		9CE91F9C290D780700D70B8C /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CE91F9A290D780700D70B8C /* SettingViewController.xib */; };
 		A931BC3A2AC727A5B9734FE9 /* Pods_MasCover_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7509280C7B38B0604E6C7403 /* Pods_MasCover_iOSTests.framework */; };
 		F5639731508A1E2E0D6C8D48 /* Pods_MasCover_iOS_MasCover_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7777D1DDC9724AA9D955525 /* Pods_MasCover_iOS_MasCover_iOSUITests.framework */; };
 /* End PBXBuildFile section */
@@ -100,6 +102,8 @@
 		9CC95183290560FC00A13709 /* CustomWallpaperCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomWallpaperCell.xib; sourceTree = "<group>"; };
 		9CC951872905B54F00A13709 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		9CC951882905B54F00A13709 /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		9CE91F99290D780700D70B8C /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		9CE91F9A290D780700D70B8C /* SettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingViewController.xib; sourceTree = "<group>"; };
 		D25B75957EFF9952EEAAF0D6 /* Pods-MasCover-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MasCover-iOS.debug.xcconfig"; path = "Target Support Files/Pods-MasCover-iOS/Pods-MasCover-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		D7777D1DDC9724AA9D955525 /* Pods_MasCover_iOS_MasCover_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MasCover_iOS_MasCover_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -198,6 +202,8 @@
 		9C4BE12A290824EB00246F31 /* setting */ = {
 			isa = PBXGroup;
 			children = (
+				9CE91F99290D780700D70B8C /* SettingViewController.swift */,
+				9CE91F9A290D780700D70B8C /* SettingViewController.xib */,
 			);
 			path = setting;
 			sourceTree = "<group>";
@@ -442,6 +448,7 @@
 				9CC9517929035C6B00A13709 /* WallpapersViewController.xib in Resources */,
 				9C696BD528FAB42A0082EC40 /* down.json in Resources */,
 				9C696BD328FAB42A0082EC40 /* favourite.json in Resources */,
+				9CE91F9C290D780700D70B8C /* SettingViewController.xib in Resources */,
 				9C223CEB28F73B7E008F156A /* GoogleService-Info.plist in Resources */,
 				9C223CC428F73B23008F156A /* Assets.xcassets in Resources */,
 				9C696BD428FAB42A0082EC40 /* loading.json in Resources */,
@@ -578,6 +585,7 @@
 				9C696BD828FAFF5E0082EC40 /* UIViewExtension.swift in Sources */,
 				9CC951732903062700A13709 /* CategorieCell.swift in Sources */,
 				9C223CBC28F73B1F008F156A /* ViewController.swift in Sources */,
+				9CE91F9B290D780700D70B8C /* SettingViewController.swift in Sources */,
 				9CC951892905B54F00A13709 /* DetailViewController.swift in Sources */,
 				9C223CB828F73B1F008F156A /* AppDelegate.swift in Sources */,
 				9C223CBA28F73B1F008F156A /* SceneDelegate.swift in Sources */,

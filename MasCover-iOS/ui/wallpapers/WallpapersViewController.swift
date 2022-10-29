@@ -44,6 +44,11 @@ class WallpapersViewController: UIViewController {
     func initAction(){
         let gestureBack = UITapGestureRecognizer(target: self, action:  #selector (self.backAction (_:)))
         self.backView.addGestureRecognizer(gestureBack)
+        
+        
+        // Add listener to setting
+        let gestureSetting = UITapGestureRecognizer(target: self, action:  #selector (self.settingAction (_:)))
+        self.rightBottom.addGestureRecognizer(gestureSetting)
     }
     
     func initLoader(){
@@ -62,6 +67,17 @@ class WallpapersViewController: UIViewController {
         wallpaperCollection.dataSource = self
     }
     
+    
+    @objc func settingAction(_ sender:UITapGestureRecognizer){
+        // do other task
+        let settingViewController = SettingViewController()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let navigationController = self.navigationController {
+              navigationController.pushViewController(settingViewController, animated: false)
+            }
+        }
+    }
     
     @objc func backAction(_ sender:UITapGestureRecognizer){
         // do other task

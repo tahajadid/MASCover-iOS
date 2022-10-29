@@ -31,6 +31,9 @@ class HomeViewController: UIViewController {
         navigationItem.setHidesBackButton(true, animated: true)
         initViews()
         
+        self.categorieTable.backgroundColor = UIColor.clear
+
+        
         //FirebaseApp.configure()
         fetchBook()
     }
@@ -52,7 +55,22 @@ class HomeViewController: UIViewController {
         var frame = CGRect.zero
         frame.size.height = .leastNormalMagnitude
         self.categorieTable.tableHeaderView = UIView(frame: frame)
+        
+        // Add listener to setting
+        let gestureSetting = UITapGestureRecognizer(target: self, action:  #selector (self.settingAction (_:)))
+        self.rightBottom.addGestureRecognizer(gestureSetting)
 
+    }
+    
+    @objc func settingAction(_ sender:UITapGestureRecognizer){
+        // do other task
+        let settingViewController = SettingViewController()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let navigationController = self.navigationController {
+              navigationController.pushViewController(settingViewController, animated: false)
+            }
+        }
     }
     
     private func fetchBook() {
@@ -118,6 +136,7 @@ class HomeViewController: UIViewController {
         self.bottomView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         
     }
+    
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate{

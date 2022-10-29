@@ -36,8 +36,12 @@ class DetailViewController: UIViewController {
         let gestureDownload = UITapGestureRecognizer(target: self, action:  #selector (self.downloadAction (_:)))
         self.download.addGestureRecognizer(gestureDownload)
         
-        let gestureBack = UITapGestureRecognizer(target: self, action:  #selector (self.backAction (_:)))        
+        let gestureBack = UITapGestureRecognizer(target: self, action:  #selector (self.backAction (_:)))
         self.backView.addGestureRecognizer(gestureBack)
+        
+        // Add listener to setting
+        let gestureSetting = UITapGestureRecognizer(target: self, action:  #selector (self.settingAction (_:)))
+        self.bottomRight.addGestureRecognizer(gestureSetting)
         
         /*
         let gestureSetWallpaper = UITapGestureRecognizer(target: self, action:  #selector (self.wallpaperdAction (_:)))
@@ -77,6 +81,18 @@ class DetailViewController: UIViewController {
 
         navigationController?.popViewController(animated: true)
 
+    }
+    
+    
+    @objc func settingAction(_ sender:UITapGestureRecognizer){
+        // do other task
+        let settingViewController = SettingViewController()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let navigationController = self.navigationController {
+              navigationController.pushViewController(settingViewController, animated: false)
+            }
+        }
     }
     
     @objc func wallpaperdAction(_ sender:UITapGestureRecognizer){
