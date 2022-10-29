@@ -22,6 +22,8 @@
 		9C223CEE28F75679008F156A /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9C223CED28F75679008F156A /* FirebaseCrashlytics */; };
 		9C223CF028F75679008F156A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9C223CEF28F75679008F156A /* FirebaseFirestore */; };
 		9C223CF228F75679008F156A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9C223CF128F75679008F156A /* FirebaseStorage */; };
+		9C4A8C0E290D851000E76856 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C4A8C0C290D851000E76856 /* FavoriteViewController.swift */; };
+		9C4A8C0F290D851000E76856 /* FavoriteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C4A8C0D290D851000E76856 /* FavoriteViewController.xib */; };
 		9C696BCE28F7715D0082EC40 /* mandarin_regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C696BCD28F7715D0082EC40 /* mandarin_regular.ttf */; };
 		9C696BD328FAB42A0082EC40 /* favourite.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C696BD028FAB42A0082EC40 /* favourite.json */; };
 		9C696BD428FAB42A0082EC40 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 9C696BD128FAB42A0082EC40 /* loading.json */; };
@@ -85,6 +87,8 @@
 		9C223CDB28F73B23008F156A /* MasCover_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasCover_iOSUITests.swift; sourceTree = "<group>"; };
 		9C223CDD28F73B23008F156A /* MasCover_iOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasCover_iOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		9C223CEA28F73B7E008F156A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9C4A8C0C290D851000E76856 /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		9C4A8C0D290D851000E76856 /* FavoriteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteViewController.xib; sourceTree = "<group>"; };
 		9C696BCD28F7715D0082EC40 /* mandarin_regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = mandarin_regular.ttf; sourceTree = "<group>"; };
 		9C696BD028FAB42A0082EC40 /* favourite.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = favourite.json; sourceTree = "<group>"; };
 		9C696BD128FAB42A0082EC40 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
@@ -199,6 +203,15 @@
 			path = "MasCover-iOSUITests";
 			sourceTree = "<group>";
 		};
+		9C4A8C0B290D850100E76856 /* favorite */ = {
+			isa = PBXGroup;
+			children = (
+				9C4A8C0C290D851000E76856 /* FavoriteViewController.swift */,
+				9C4A8C0D290D851000E76856 /* FavoriteViewController.xib */,
+			);
+			path = favorite;
+			sourceTree = "<group>";
+		};
 		9C4BE12A290824EB00246F31 /* setting */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +250,7 @@
 		9C696BD928FC80FE0082EC40 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				9C4A8C0B290D850100E76856 /* favorite */,
 				9C4BE12A290824EB00246F31 /* setting */,
 				9CC951862905B4F300A13709 /* detail */,
 				9CC9517529035C4300A13709 /* wallpapers */,
@@ -449,6 +463,7 @@
 				9C696BD528FAB42A0082EC40 /* down.json in Resources */,
 				9C696BD328FAB42A0082EC40 /* favourite.json in Resources */,
 				9CE91F9C290D780700D70B8C /* SettingViewController.xib in Resources */,
+				9C4A8C0F290D851000E76856 /* FavoriteViewController.xib in Resources */,
 				9C223CEB28F73B7E008F156A /* GoogleService-Info.plist in Resources */,
 				9C223CC428F73B23008F156A /* Assets.xcassets in Resources */,
 				9C696BD428FAB42A0082EC40 /* loading.json in Resources */,
@@ -592,6 +607,7 @@
 				9CC9518029055C4700A13709 /* Wallpaper.swift in Sources */,
 				9CC95184290560FC00A13709 /* CustomWallpaperCell.swift in Sources */,
 				9C223CC228F73B1F008F156A /* MasCover_iOS.xcdatamodeld in Sources */,
+				9C4A8C0E290D851000E76856 /* FavoriteViewController.swift in Sources */,
 				9CC9517829035C6B00A13709 /* WallpapersViewController.swift in Sources */,
 				9CC951702902F36B00A13709 /* Categorie.swift in Sources */,
 				9C696BDD28FC81660082EC40 /* HomeViewController.swift in Sources */,

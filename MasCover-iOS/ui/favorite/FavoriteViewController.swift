@@ -1,22 +1,23 @@
 //
-//  SettingViewController.swift
+//  FavoriteViewController.swift
 //  MasCover-iOS
 //
 //  Created by taha_jadid on 29/10/2022.
 //
 
 import UIKit
+import Lottie
 
-class SettingViewController: UIViewController {
+class FavoriteViewController: UIViewController {
 
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var rightBottom: UIView!
     @IBOutlet weak var leftBottom: UIView!
+    @IBOutlet weak var animatedView: UIView!
     @IBOutlet weak var centerBottom: UIView!
     @IBOutlet weak var bottomView: UIView!
     
-    @IBOutlet weak var switchFr: UISwitch!
-    @IBOutlet weak var switchAr: UISwitch!
+    private var myAnimationView: AnimationView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,27 +30,12 @@ class SettingViewController: UIViewController {
         drawCircles()
         drawTopAndBottom()
         
-        switchFr.addTarget(self, action: #selector(stateChangedFr), for: .valueChanged)
-        switchAr.addTarget(self, action: #selector(stateChangedAr), for: .valueChanged)
-
-    }
-    
-    @objc func stateChangedFr(switchState: UISwitch) {
-       if switchFr.isOn {
-           switchAr.setOn(false, animated: true)
-       } else {
-           // Chnage State of Ar Switch
-           switchAr.setOn(true, animated: true)
-       }
-    }
-    
-    @objc func stateChangedAr(switchState: UISwitch) {
-       if switchAr.isOn {
-           switchFr.setOn(false, animated: true)
-       } else {
-           // Chnage State of Ar Switch
-           switchFr.setOn(true, animated: true)
-       }
+        myAnimationView = .init(name: "favourite")
+        myAnimationView!.frame = animatedView.bounds
+        myAnimationView!.contentMode = .scaleAspectFill
+        myAnimationView!.loopMode = .loop
+        animatedView.addSubview(myAnimationView!)
+        myAnimationView!.play()
     }
 
     func drawCircles(){
@@ -77,5 +63,5 @@ class SettingViewController: UIViewController {
         self.bottomView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         
     }
-    
+
 }

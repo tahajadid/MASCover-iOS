@@ -59,6 +59,10 @@ class HomeViewController: UIViewController {
         // Add listener to setting
         let gestureSetting = UITapGestureRecognizer(target: self, action:  #selector (self.settingAction (_:)))
         self.rightBottom.addGestureRecognizer(gestureSetting)
+        
+        // Add listener to favorite
+        let gestureFavorite = UITapGestureRecognizer(target: self, action:  #selector (self.favoriteAction (_:)))
+        self.leftBottom.addGestureRecognizer(gestureFavorite)
 
     }
     
@@ -72,6 +76,18 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+    @objc func favoriteAction(_ sender:UITapGestureRecognizer){
+        // do other task
+        let favoriteViewController = FavoriteViewController()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let navigationController = self.navigationController {
+              navigationController.pushViewController(favoriteViewController, animated: false)
+            }
+        }
+    }
+    
     
     private func fetchBook() {
         
