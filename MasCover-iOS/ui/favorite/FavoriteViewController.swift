@@ -36,6 +36,38 @@ class FavoriteViewController: UIViewController {
         myAnimationView!.loopMode = .loop
         animatedView.addSubview(myAnimationView!)
         myAnimationView!.play()
+        
+        
+        // Add listener to setting
+        let gestureHome = UITapGestureRecognizer(target: self, action:  #selector (self.homeAction (_:)))
+        self.centerBottom.addGestureRecognizer(gestureHome)
+        
+        // Add listener to setting
+        let gestureSetting = UITapGestureRecognizer(target: self, action:  #selector (self.settingAction (_:)))
+        self.rightBottom.addGestureRecognizer(gestureSetting)
+        
+    }
+    
+    @objc func homeAction(_ sender:UITapGestureRecognizer){
+        // do other task
+        let homeViewController = HomeViewController()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let navigationController = self.navigationController {
+              navigationController.pushViewController(homeViewController, animated: false)
+            }
+        }
+    }
+    
+    @objc func settingAction(_ sender:UITapGestureRecognizer){
+        // do other task
+        let settingViewController = SettingViewController()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let navigationController = self.navigationController {
+              navigationController.pushViewController(settingViewController, animated: false)
+            }
+        }
     }
 
     func drawCircles(){

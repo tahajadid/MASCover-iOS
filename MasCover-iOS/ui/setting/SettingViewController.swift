@@ -32,7 +32,38 @@ class SettingViewController: UIViewController {
         switchFr.addTarget(self, action: #selector(stateChangedFr), for: .valueChanged)
         switchAr.addTarget(self, action: #selector(stateChangedAr), for: .valueChanged)
 
+        // Add listener to setting
+        let gestureHome = UITapGestureRecognizer(target: self, action:  #selector (self.homeAction (_:)))
+        self.centerBottom.addGestureRecognizer(gestureHome)
+        
+        // Add listener to favorite
+        let gestureFavorite = UITapGestureRecognizer(target: self, action:  #selector (self.favoriteAction (_:)))
+        self.leftBottom.addGestureRecognizer(gestureFavorite)
+        
     }
+    
+    @objc func favoriteAction(_ sender:UITapGestureRecognizer){
+        // do other task
+        let favoriteViewController = FavoriteViewController()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let navigationController = self.navigationController {
+              navigationController.pushViewController(favoriteViewController, animated: false)
+            }
+        }
+    }
+    
+    @objc func homeAction(_ sender:UITapGestureRecognizer){
+        // do other task
+        let homeViewController = HomeViewController()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let navigationController = self.navigationController {
+              navigationController.pushViewController(homeViewController, animated: false)
+            }
+        }
+    }
+    
     
     @objc func stateChangedFr(switchState: UISwitch) {
        if switchFr.isOn {

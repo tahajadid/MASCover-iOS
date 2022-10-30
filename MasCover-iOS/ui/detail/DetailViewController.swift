@@ -18,6 +18,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var likeImage: UIImageView!
     @IBOutlet weak var dislikeImage: UIImageView!
     @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var savedImageView: UIView!
     
     var pathWallpaper : String = ""
 
@@ -33,6 +34,10 @@ class DetailViewController: UIViewController {
     }
 
     func initView(){
+        
+        savedImageView.isHidden = true
+
+        
         let gestureDownload = UITapGestureRecognizer(target: self, action:  #selector (self.downloadAction (_:)))
         self.download.addGestureRecognizer(gestureDownload)
         
@@ -73,8 +78,31 @@ class DetailViewController: UIViewController {
 
     @objc func downloadAction(_ sender:UITapGestureRecognizer){
         // do other task
-        UIImageWriteToSavedPhotosAlbum(self.wallpaperImage.image!, nil, nil, nil)
+        UIImageWriteToSavedPhotosAlbum(self.wallpaperImage.image!,
+                                       self,
+                                       #selector(self.savedImage),
+                                       nil)
 
+    }
+    
+    @objc func savedImage(_ im:UIImage, error:Error?, context:UnsafeMutableRawPointer?) {
+        if let err = error {
+            print(err)
+            return
+        }
+        print("success")
+        savedImageView.isHidden = false
+        
+        let oldCenterFirst = savedImageView.center
+        let newCenterFirst = CGPoint(x: oldCenterFirst.x, y: oldCenterFirst.y + 40)
+
+        UIView.animate(withDuration: 1, delay: 0, options: .curveLinear, animations: {
+            self.savedImageView.center = newCenterFirst
+        }) { (success: Bool) in
+          print("Done top image")
+          }
+        
+        savedImageView
     }
     
     @objc func backAction(_ sender:UITapGestureRecognizer){

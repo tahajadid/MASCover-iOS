@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -34,7 +33,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PfF-5y-OZz" userLabel="animatedView">
                     <rect key="frame" x="20" y="247" width="350" height="350"/>
                     <viewLayoutGuide key="safeArea" id="txJ-fr-PXO"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="350" id="GfV-Ki-WDG"/>
                         <constraint firstAttribute="width" constant="350" id="PKm-WE-P0m"/>
@@ -44,15 +43,13 @@
                     <rect key="frame" x="0.0" y="0.0" width="390" height="130"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="only_mas_cover" translatesAutoresizingMaskIntoConstraints="NO" id="pqD-xJ-esd">
-                            <rect key="frame" x="128" y="40" width="134" height="80"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="134" id="B0p-ed-8ns"/>
-                            </constraints>
+                            <rect key="frame" x="140" y="40" width="110" height="80"/>
                         </imageView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="pqD-xJ-esd" firstAttribute="centerX" secondItem="XCP-cH-0Yy" secondAttribute="centerX" id="HwC-Ac-Rjy"/>
+                        <constraint firstItem="pqD-xJ-esd" firstAttribute="leading" secondItem="XCP-cH-0Yy" secondAttribute="leading" constant="140" id="5qZ-Wx-6cI"/>
+                        <constraint firstAttribute="trailing" secondItem="pqD-xJ-esd" secondAttribute="trailing" constant="140" id="Fg7-2i-cAR"/>
                         <constraint firstAttribute="height" constant="130" id="La7-tT-IeO"/>
                         <constraint firstAttribute="bottom" secondItem="pqD-xJ-esd" secondAttribute="bottom" constant="10" id="duy-Oa-XrX"/>
                         <constraint firstItem="pqD-xJ-esd" firstAttribute="top" secondItem="XCP-cH-0Yy" secondAttribute="top" constant="40" id="ohd-OD-886"/>
@@ -129,7 +126,7 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favoris" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wW-de-u9b">
                     <rect key="frame" x="10" y="140" width="106.66666666666667" height="35"/>
                     <fontDescription key="fontDescription" name="Mandarin-Regular" family="Mandarin" pointSize="30"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGI-XQ-rhO">
@@ -148,7 +145,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="DF7-SJ-4Ss"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" red="0.96862745098039216" green="0.96862745098039216" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
                 <constraint firstItem="7wW-de-u9b" firstAttribute="leading" secondItem="DF7-SJ-4Ss" secondAttribute="leading" constant="10" id="33c-je-3h0"/>
                 <constraint firstItem="7wW-de-u9b" firstAttribute="top" secondItem="XCP-cH-0Yy" secondAttribute="bottom" constant="10" id="4kc-Ra-BYZ"/>
@@ -184,8 +181,5 @@
         <namedColor name="AccentColor">
             <color red="1" green="0.79199999570846558" blue="0.15700000524520874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
