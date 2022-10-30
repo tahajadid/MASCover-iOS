@@ -21,7 +21,7 @@
                 <outlet property="bottomView" destination="9Zp-4j-rws" id="KGc-Ss-Ue9"/>
                 <outlet property="categorieTable" destination="VFR-F4-Kub" id="FGG-Ch-8wq"/>
                 <outlet property="centerBottom" destination="97Y-Hq-sbI" id="wBw-NT-VSY"/>
-                <outlet property="flashBtn" destination="YEc-ni-AE5" id="cML-9T-Ry5"/>
+                <outlet property="flashImage" destination="sjq-Ld-r8a" id="xmV-s5-mfo"/>
                 <outlet property="flashView" destination="7pd-9I-bLY" id="7Oo-xv-TGe"/>
                 <outlet property="leftBottom" destination="AJA-VL-mjt" id="yRm-db-mOa"/>
                 <outlet property="rightBottom" destination="fY4-XB-5s7" id="TRf-bK-68O"/>
@@ -77,28 +77,13 @@
                                 <constraint firstItem="sjq-Ld-r8a" firstAttribute="leading" secondItem="7pd-9I-bLY" secondAttribute="leading" constant="20" id="zOl-Le-szn"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEc-ni-AE5">
-                            <rect key="frame" x="82" y="56" width="50" height="50"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="50" id="JNB-Eo-r2F"/>
-                                <constraint firstAttribute="height" constant="50" id="xWS-FY-F1H"/>
-                            </constraints>
-                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                            <state key="normal" title="Button" image="flash_empty"/>
-                            <connections>
-                                <action selector="flashButton:" destination="-1" eventType="touchUpInside" id="CRk-Ox-7IK"/>
-                            </connections>
-                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="130" id="Gz6-YU-clf"/>
-                        <constraint firstItem="YEc-ni-AE5" firstAttribute="leading" secondItem="7pd-9I-bLY" secondAttribute="trailing" constant="2" id="NvL-sj-2SP"/>
-                        <constraint firstAttribute="bottom" secondItem="YEc-ni-AE5" secondAttribute="bottom" constant="24" id="U0P-rY-30T"/>
                         <constraint firstItem="7pd-9I-bLY" firstAttribute="leading" secondItem="TXD-qE-Xay" secondAttribute="leading" id="WFP-d4-v2J"/>
                         <constraint firstAttribute="trailing" secondItem="2BH-Lq-0xQ" secondAttribute="trailing" constant="140" id="Y2M-0e-rGE"/>
                         <constraint firstItem="2BH-Lq-0xQ" firstAttribute="leading" secondItem="TXD-qE-Xay" secondAttribute="leading" constant="140" id="YGr-l0-WOK"/>
-                        <constraint firstAttribute="bottom" secondItem="YEc-ni-AE5" secondAttribute="bottom" constant="24" id="eMl-5H-n54"/>
                         <constraint firstAttribute="bottom" secondItem="H5M-Ke-Hid" secondAttribute="bottom" constant="10" id="hn3-Sx-9bg"/>
                         <constraint firstAttribute="bottom" secondItem="2BH-Lq-0xQ" secondAttribute="bottom" constant="10" id="kkX-cv-qym"/>
                         <constraint firstAttribute="bottom" secondItem="7pd-9I-bLY" secondAttribute="bottom" constant="10" id="pTL-Hr-miH"/>
