@@ -1,22 +1,23 @@
 //
-//  SettingViewController.swift
+//  FavoriteViewController.swift
 //  MasCover-iOS
 //
 //  Created by taha_jadid on 29/10/2022.
 //
 
 import UIKit
+import Lottie
 
-class SettingViewController: UIViewController {
+class FavoriteViewController: UIViewController {
 
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var rightBottom: UIView!
     @IBOutlet weak var leftBottom: UIView!
+    @IBOutlet weak var animatedView: UIView!
     @IBOutlet weak var centerBottom: UIView!
     @IBOutlet weak var bottomView: UIView!
     
-    @IBOutlet weak var switchFr: UISwitch!
-    @IBOutlet weak var switchAr: UISwitch!
+    private var myAnimationView: AnimationView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,28 +30,22 @@ class SettingViewController: UIViewController {
         drawCircles()
         drawTopAndBottom()
         
-        switchFr.addTarget(self, action: #selector(stateChangedFr), for: .valueChanged)
-        switchAr.addTarget(self, action: #selector(stateChangedAr), for: .valueChanged)
-
+        myAnimationView = .init(name: "favourite")
+        myAnimationView!.frame = animatedView.bounds
+        myAnimationView!.contentMode = .scaleAspectFill
+        myAnimationView!.loopMode = .loop
+        animatedView.addSubview(myAnimationView!)
+        myAnimationView!.play()
+        
+        
         // Add listener to setting
         let gestureHome = UITapGestureRecognizer(target: self, action:  #selector (self.homeAction (_:)))
         self.centerBottom.addGestureRecognizer(gestureHome)
         
-        // Add listener to favorite
-        let gestureFavorite = UITapGestureRecognizer(target: self, action:  #selector (self.favoriteAction (_:)))
-        self.leftBottom.addGestureRecognizer(gestureFavorite)
+        // Add listener to setting
+        let gestureSetting = UITapGestureRecognizer(target: self, action:  #selector (self.settingAction (_:)))
+        self.rightBottom.addGestureRecognizer(gestureSetting)
         
-    }
-    
-    @objc func favoriteAction(_ sender:UITapGestureRecognizer){
-        // do other task
-        let favoriteViewController = FavoriteViewController()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            if let navigationController = self.navigationController {
-              navigationController.pushViewController(favoriteViewController, animated: false)
-            }
-        }
     }
     
     @objc func homeAction(_ sender:UITapGestureRecognizer){
@@ -64,23 +59,15 @@ class SettingViewController: UIViewController {
         }
     }
     
-    
-    @objc func stateChangedFr(switchState: UISwitch) {
-       if switchFr.isOn {
-           switchAr.setOn(false, animated: true)
-       } else {
-           // Chnage State of Ar Switch
-           switchAr.setOn(true, animated: true)
-       }
-    }
-    
-    @objc func stateChangedAr(switchState: UISwitch) {
-       if switchAr.isOn {
-           switchFr.setOn(false, animated: true)
-       } else {
-           // Chnage State of Ar Switch
-           switchFr.setOn(true, animated: true)
-       }
+    @objc func settingAction(_ sender:UITapGestureRecognizer){
+        // do other task
+        let settingViewController = SettingViewController()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let navigationController = self.navigationController {
+              navigationController.pushViewController(settingViewController, animated: false)
+            }
+        }
     }
 
     func drawCircles(){
@@ -108,5 +95,5 @@ class SettingViewController: UIViewController {
         self.bottomView.layer.maskedCorners = [.layerMaxXMinYCorner,.layerMinXMinYCorner]
         
     }
-    
+
 }

@@ -19,7 +19,12 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var centerBottom: UIView!
     @IBOutlet weak var leftBottom: UIView!
     @IBOutlet weak var rightBottom: UIView!
+    @IBOutlet weak var flashView: UIView!
+    @IBOutlet weak var yellowView: UIView!
     
+    @IBOutlet weak var savedImageView: UIView!
+
+    @IBOutlet weak var flashBtn: UIButton!
     
     private var myAnimationView: AnimationView?
 
@@ -59,7 +64,34 @@ class HomeViewController: UIViewController {
         // Add listener to setting
         let gestureSetting = UITapGestureRecognizer(target: self, action:  #selector (self.settingAction (_:)))
         self.rightBottom.addGestureRecognizer(gestureSetting)
+        
+        // Add listener to favorite
+        let gestureFavorite = UITapGestureRecognizer(target: self, action:  #selector (self.favoriteAction (_:)))
+        self.leftBottom.addGestureRecognizer(gestureFavorite)
+        
+        // Add listener to yellowScreen
+        let gestureYellow = UITapGestureRecognizer(target: self, action:  #selector (self.yellowAction (_:)))
+        self.yellowView.addGestureRecognizer(gestureYellow)
+        
+        // Add listener to flashView
+        let gestureFlash = UITapGestureRecognizer(target: self, action:  #selector (self.flashAction (_:)))
+        self.flashView.addGestureRecognizer(gestureFlash)
+        
+        flashView.isUserInteractionEnabled = true
+        yellowView.isUserInteractionEnabled = true
 
+
+    }
+    
+    
+    @IBAction func flashButton(_ sender: Any) {
+        let settingViewController = SettingViewController()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let navigationController = self.navigationController {
+              navigationController.pushViewController(settingViewController, animated: false)
+            }
+        }
     }
     
     @objc func settingAction(_ sender:UITapGestureRecognizer){
@@ -72,6 +104,40 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    
+    @objc func yellowAction(_ sender:UITapGestureRecognizer){
+        // do other task
+        let yellowScreenViewController = YellowScreenViewController()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let navigationController = self.navigationController {
+              navigationController.pushViewController(yellowScreenViewController, animated: true)
+            }
+        }
+    }
+    
+    @objc func flashAction(_ sender:UITapGestureRecognizer){
+        // do other task
+        let yellowScreenViewController = YellowScreenViewController()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let navigationController = self.navigationController {
+              navigationController.pushViewController(yellowScreenViewController, animated: true)
+            }
+        }
+    }
+    
+    @objc func favoriteAction(_ sender:UITapGestureRecognizer){
+        // do other task
+        let favoriteViewController = FavoriteViewController()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            if let navigationController = self.navigationController {
+              navigationController.pushViewController(favoriteViewController, animated: false)
+            }
+        }
+    }
+    
     
     private func fetchBook() {
         
