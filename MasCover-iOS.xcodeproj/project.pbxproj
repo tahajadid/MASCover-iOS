@@ -33,6 +33,7 @@
 		9C696BD828FAFF5E0082EC40 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C696BD728FAFF5D0082EC40 /* UIViewExtension.swift */; };
 		9C696BDD28FC81660082EC40 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C696BDB28FC81650082EC40 /* HomeViewController.swift */; };
 		9C696BDE28FC81660082EC40 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9C696BDC28FC81650082EC40 /* HomeViewController.xib */; };
+		9C9C8420290F0BE700EE0C42 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC951872905B54F00A13709 /* DetailViewController.swift */; };
 		9CC951702902F36B00A13709 /* Categorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC9516F2902F36B00A13709 /* Categorie.swift */; };
 		9CC951732903062700A13709 /* CategorieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC951712903062700A13709 /* CategorieCell.swift */; };
 		9CC951742903062700A13709 /* CategorieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC951722903062700A13709 /* CategorieCell.xib */; };
@@ -41,7 +42,6 @@
 		9CC9518029055C4700A13709 /* Wallpaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC9517F29055C4700A13709 /* Wallpaper.swift */; };
 		9CC95184290560FC00A13709 /* CustomWallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC95182290560FC00A13709 /* CustomWallpaperCell.swift */; };
 		9CC95185290560FC00A13709 /* CustomWallpaperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC95183290560FC00A13709 /* CustomWallpaperCell.xib */; };
-		9CC951892905B54F00A13709 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC951872905B54F00A13709 /* DetailViewController.swift */; };
 		9CC9518A2905B54F00A13709 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CC951882905B54F00A13709 /* DetailViewController.xib */; };
 		9CE91F9B290D780700D70B8C /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE91F99290D780700D70B8C /* SettingViewController.swift */; };
 		9CE91F9C290D780700D70B8C /* SettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CE91F9A290D780700D70B8C /* SettingViewController.xib */; };
@@ -616,7 +616,6 @@
 				9CC951732903062700A13709 /* CategorieCell.swift in Sources */,
 				9C223CBC28F73B1F008F156A /* ViewController.swift in Sources */,
 				9CE91F9B290D780700D70B8C /* SettingViewController.swift in Sources */,
-				9CC951892905B54F00A13709 /* DetailViewController.swift in Sources */,
 				9C223CB828F73B1F008F156A /* AppDelegate.swift in Sources */,
 				9C223CBA28F73B1F008F156A /* SceneDelegate.swift in Sources */,
 				9CC9518029055C4700A13709 /* Wallpaper.swift in Sources */,
@@ -625,6 +624,7 @@
 				9C223CC228F73B1F008F156A /* MasCover_iOS.xcdatamodeld in Sources */,
 				9C4A8C0E290D851000E76856 /* FavoriteViewController.swift in Sources */,
 				9CC9517829035C6B00A13709 /* WallpapersViewController.swift in Sources */,
+				9C9C8420290F0BE700EE0C42 /* DetailViewController.swift in Sources */,
 				9CC951702902F36B00A13709 /* Categorie.swift in Sources */,
 				9C696BDD28FC81660082EC40 /* HomeViewController.swift in Sources */,
 			);

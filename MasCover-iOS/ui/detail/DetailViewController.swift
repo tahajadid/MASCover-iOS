@@ -91,18 +91,29 @@ class DetailViewController: UIViewController {
             return
         }
         print("success")
+        showSnackBar()
+    }
+    
+    func showSnackBar(){
+        
+        self.savedImageView.clipsToBounds = true
+        self.savedImageView.layer.cornerRadius = 8
+
+
         savedImageView.isHidden = false
         
         let oldCenterFirst = savedImageView.center
-        let newCenterFirst = CGPoint(x: oldCenterFirst.x, y: oldCenterFirst.y + 40)
+        let newCenterFirst = CGPoint(x: oldCenterFirst.x, y: oldCenterFirst.y - 30)
 
-        UIView.animate(withDuration: 1, delay: 0, options: .curveLinear, animations: {
+        UIView.animate(withDuration: 0.8, delay: 0, options: .curveLinear, animations: {
             self.savedImageView.center = newCenterFirst
         }) { (success: Bool) in
           print("Done top image")
           }
         
-        savedImageView
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
+            self.savedImageView.isHidden = true
+        }
     }
     
     @objc func backAction(_ sender:UITapGestureRecognizer){
