@@ -1,6 +1,9 @@
 <img src="https://github.com/tahajadid/MASCover/blob/main/app/src/main/res/drawable-v24/only_mas_cover.png"/>
 
-# MASCover <iOS Version>
+# MASCover
+
+## Android Version
+[Github Repo for the Android Version](https://github.com/tahajadid/MASCover)
 
 ## Overview
 MAS Cover is an application that list a couple of images, all the images can be set as a wallpaper of your phone.
