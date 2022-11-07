@@ -10,3 +10,5 @@ the word MAS is the name of a Moroccan football team, and the application develo
 <img src="/android_icon.png" width="50" height="50"/>
 
 You can check the [Github Repo for the Android Version](https://github.com/tahajadid/MASCover)
+
+## Demo
