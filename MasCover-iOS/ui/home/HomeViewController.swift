@@ -9,6 +9,7 @@ import UIKit
 import FirebaseCore
 import FirebaseFirestore
 import Lottie
+import AVFoundation
 
 class HomeViewController: UIViewController {
 
@@ -22,12 +23,11 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var flashView: UIView!
     @IBOutlet weak var yellowView: UIView!
     
-    @IBOutlet weak var savedImageView: UIView!
-
-    @IBOutlet weak var flashBtn: UIButton!
+    @IBOutlet weak var flashImage: UIImageView!
     
     private var myAnimationView: AnimationView?
 
+    private var isOn = false
     var allCategories:[Categorie] = [Categorie]()
 
     
@@ -84,15 +84,21 @@ class HomeViewController: UIViewController {
     }
     
     
-    @IBAction func flashButton(_ sender: Any) {
-        let settingViewController = SettingViewController()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            if let navigationController = self.navigationController {
-              navigationController.pushViewController(settingViewController, animated: false)
-            }
+    func toggleTorch(on: Bool) {
+        guard
+            let device = AVCaptureDevice.default(for: AVMediaType.video),
+            device.hasTorch
+        else { return }
+
+        do {
+            try device.lockForConfiguration()
+            device.torchMode = on ? .on : .off
+            device.unlockForConfiguration()
+        } catch {
+            print("Torch could not be used")
         }
     }
+    
     
     @objc func settingAction(_ sender:UITapGestureRecognizer){
         // do other task
@@ -117,14 +123,15 @@ class HomeViewController: UIViewController {
     }
     
     @objc func flashAction(_ sender:UITapGestureRecognizer){
-        // do other task
-        let yellowScreenViewController = YellowScreenViewController()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            if let navigationController = self.navigationController {
-              navigationController.pushViewController(yellowScreenViewController, animated: true)
-            }
+        isOn = !isOn
+        toggleTorch(on: isOn)
+        if(isOn) {
+            flashImage.image = UIImage(named: "flash_fill")
+            
+        }else{
+            flashImage.image = UIImage(named: "flash_empty")
         }
+        
     }
     
     @objc func favoriteAction(_ sender:UITapGestureRecognizer){

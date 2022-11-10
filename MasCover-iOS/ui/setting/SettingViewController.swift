@@ -15,8 +15,11 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var centerBottom: UIView!
     @IBOutlet weak var bottomView: UIView!
     
+    @IBOutlet weak var telegramView: UIView!
     @IBOutlet weak var switchFr: UISwitch!
     @IBOutlet weak var switchAr: UISwitch!
+
+    @IBOutlet weak var linkCopiedView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,9 @@ class SettingViewController: UIViewController {
     }
 
     func initViews(){
+        
+        linkCopiedView.isHidden = true
+
         drawCircles()
         drawTopAndBottom()
         
@@ -40,6 +46,15 @@ class SettingViewController: UIViewController {
         let gestureFavorite = UITapGestureRecognizer(target: self, action:  #selector (self.favoriteAction (_:)))
         self.leftBottom.addGestureRecognizer(gestureFavorite)
         
+        // Add listener to favorite
+        let gestureTelegram = UITapGestureRecognizer(target: self, action:  #selector (self.telegramAction (_:)))
+        self.telegramView.addGestureRecognizer(gestureTelegram)
+        
+    }
+    
+    @objc func telegramAction(_ sender:UITapGestureRecognizer){
+        UIPasteboard.general.string = "https://t.me/+73-Wy4Q1l7E2ZTg8"
+        showSnackBar()
     }
     
     @objc func favoriteAction(_ sender:UITapGestureRecognizer){
@@ -81,6 +96,28 @@ class SettingViewController: UIViewController {
            // Chnage State of Ar Switch
            switchFr.setOn(true, animated: true)
        }
+    }
+    
+    func showSnackBar(){
+        
+        self.linkCopiedView.clipsToBounds = true
+        self.linkCopiedView.layer.cornerRadius = 8
+
+
+        linkCopiedView.isHidden = false
+        
+        let oldCenterFirst = linkCopiedView.center
+        let newCenterFirst = CGPoint(x: oldCenterFirst.x, y: oldCenterFirst.y - 30)
+
+        UIView.animate(withDuration: 0.8, delay: 0, options: .curveLinear, animations: {
+            self.linkCopiedView.center = newCenterFirst
+        }) { (success: Bool) in
+          print("Done top image")
+          }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
+            self.linkCopiedView.isHidden = true
+        }
     }
 
     func drawCircles(){
