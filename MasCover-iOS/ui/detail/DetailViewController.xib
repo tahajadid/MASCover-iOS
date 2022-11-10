@@ -19,10 +19,10 @@
             <connections>
                 <outlet property="backView" destination="woN-zX-GWp" id="ibc-aj-I9M"/>
                 <outlet property="bottomLeft" destination="Q1r-6e-AiR" id="PcI-OS-qcB"/>
-                <outlet property="bottomRight" destination="Q1r-6e-AiR" id="1tT-xq-cGZ"/>
+                <outlet property="bottomRight" destination="KiB-3J-jNi" id="jBz-kI-du6"/>
                 <outlet property="dislikeImage" destination="nU8-i6-Mlk" id="tUB-WE-OIY"/>
                 <outlet property="download" destination="R9b-h2-Ovf" id="qxi-QR-FO8"/>
-                <outlet property="likeImage" destination="nU8-i6-Mlk" id="CJq-89-Tm7"/>
+                <outlet property="likeImage" destination="Mbo-3S-MiS" id="XOY-QZ-EBf"/>
                 <outlet property="savedImageView" destination="mh9-1E-Pn0" id="lUK-v7-Ap5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="wallpaperImage" destination="4H7-O9-qxE" id="YsU-OP-Q3T"/>
@@ -114,7 +114,7 @@
                     <rect key="frame" x="0.0" y="816" width="224" height="80"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="Mbo-3S-MiS">
-                            <rect key="frame" x="162" y="25" width="33" height="25"/>
+                            <rect key="frame" x="151" y="25" width="33" height="25"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="4TE-ir-PCq"/>
@@ -131,7 +131,7 @@
                     <color key="backgroundColor" systemColor="systemYellowColor"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="1JX-HA-4C3" secondAttribute="bottom" constant="25" id="92N-8O-lHK"/>
-                        <constraint firstAttribute="trailing" secondItem="Mbo-3S-MiS" secondAttribute="trailing" constant="29" id="GNQ-ZD-VAE"/>
+                        <constraint firstAttribute="trailing" secondItem="Mbo-3S-MiS" secondAttribute="trailing" constant="40" id="GNQ-ZD-VAE"/>
                         <constraint firstAttribute="bottom" secondItem="Mbo-3S-MiS" secondAttribute="bottom" constant="30" id="Z7W-K9-cvR"/>
                         <constraint firstItem="1JX-HA-4C3" firstAttribute="leading" secondItem="Q1r-6e-AiR" secondAttribute="leading" constant="23" id="ZUm-wg-mUJ"/>
                         <constraint firstItem="1JX-HA-4C3" firstAttribute="centerY" secondItem="Q1r-6e-AiR" secondAttribute="centerY" id="dhM-7S-WtY"/>
