@@ -150,13 +150,23 @@ class DetailViewController: UIViewController {
     }
     
     @objc func likeAction(_ sender:UITapGestureRecognizer){
-        // do other task
-        likeImage.image = UIImage(named: "like_fill")
+        isLiked = !isLiked
+        if(isLiked) {
+            likeImage.image = UIImage(named: "like_fill")
+            dislikeImage.image = UIImage(named: "dislike")
+        }else{
+            likeImage.image = UIImage(named: "like")
+        }
     }
     
     @objc func dislikeAction(_ sender:UITapGestureRecognizer){
-        // do other task
-        dislikeImage.image = UIImage(named: "dislike_fill")
+        isDisliked = !isDisliked
+        if(isDisliked) {
+            dislikeImage.image = UIImage(named: "dislike_fill")
+            likeImage.image = UIImage(named: "like")
+        }else{
+            dislikeImage.image = UIImage(named: "dislike")
+        }
     }
      
     func setImage(_ pathWallpapaer: String){
