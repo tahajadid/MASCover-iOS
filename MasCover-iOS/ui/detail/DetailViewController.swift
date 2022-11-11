@@ -20,6 +20,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var backView: UIView!
     @IBOutlet weak var savedImageView: UIView!
     
+    private var isLiked = false
+    private var isDisliked = false
+
     var pathWallpaper : String = ""
 
     override func viewDidLoad() {
@@ -48,18 +51,19 @@ class DetailViewController: UIViewController {
         let gestureSetting = UITapGestureRecognizer(target: self, action:  #selector (self.settingAction (_:)))
         self.bottomRight.addGestureRecognizer(gestureSetting)
         
+        
         /*
         let gestureSetWallpaper = UITapGestureRecognizer(target: self, action:  #selector (self.wallpaperdAction (_:)))
         self.download.addGestureRecognizer(gestureSetWallpaper)
-        
+        */
 
         let gestureSetLike = UITapGestureRecognizer(target: self, action:  #selector (self.likeAction (_:)))
         self.bottomLeft.addGestureRecognizer(gestureSetLike)
         
         let gestureSetDislike = UITapGestureRecognizer(target: self, action:  #selector (self.dislikeAction (_:)))
-        self.download.addGestureRecognizer(gestureSetDislike)
+        self.bottomRight.addGestureRecognizer(gestureSetDislike)
          
-         */
+         
 
     }
     
@@ -146,24 +150,22 @@ class DetailViewController: UIViewController {
     }
     
     @objc func likeAction(_ sender:UITapGestureRecognizer){
-        // do other task
-        let homeViewController = HomeViewController()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            if let navigationController = self.navigationController {
-              navigationController.pushViewController(homeViewController, animated: true)
-            }
+        isLiked = !isLiked
+        if(isLiked) {
+            likeImage.image = UIImage(named: "like_fill")
+            dislikeImage.image = UIImage(named: "dislike")
+        }else{
+            likeImage.image = UIImage(named: "like")
         }
     }
     
     @objc func dislikeAction(_ sender:UITapGestureRecognizer){
-        // do other task
-        let homeViewController = HomeViewController()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            if let navigationController = self.navigationController {
-              navigationController.pushViewController(homeViewController, animated: true)
-            }
+        isDisliked = !isDisliked
+        if(isDisliked) {
+            dislikeImage.image = UIImage(named: "dislike_fill")
+            likeImage.image = UIImage(named: "like")
+        }else{
+            dislikeImage.image = UIImage(named: "dislike")
         }
     }
      
