@@ -12,3 +12,5 @@ the word MAS is the name of a Moroccan football team, and the application develo
 You can check the [Github Repo for the Android Version](https://github.com/tahajadid/MASCover)
 
 ## Demo
+
+![](https://github.com/tahajadid/MASCover-iOS/blob/main/mascover_demo.gif)
