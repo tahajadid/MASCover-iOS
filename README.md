@@ -1,3 +1,4 @@
+[![platform](https://img.shields.io/badge/platform-ios-yellow.svg)](https://www.android.com)
 # MASCover
 
 <img src="https://github.com/tahajadid/MASCover/blob/main/app/src/main/res/drawable-v24/only_mas_cover.png"/>
